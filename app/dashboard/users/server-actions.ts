@@ -2,9 +2,17 @@
 
 import { createServerClient } from '@/lib/supabase-server'
 
-export async function updateUserRole(targetId: string, newRole: 'contributor'|'editor'|'chief') {
-  const s = createServerClient()
-  // panggil RPC yang aman (cek chief di dalam fungsi)
-  const { error } = await s.rpc('set_user_role', { target_id: targetId, new_role: newRole })
+type Role = 'member' | 'writer' | 'editor' | 'admin'
+
+export async function setUserRole(userId: string, role: Role) {
+  const supabase = await createServerClient() // ✅ wajib await
+
+  // panggil Postgres function (RPC). Sesuaikan arg names dgn function-mu.
+  const { error } = await supabase.rpc('set_user_role', {
+    user_id: userId,
+    new_role: role,
+  })
+
   if (error) throw new Error(error.message)
+  return 'ok'
 }
