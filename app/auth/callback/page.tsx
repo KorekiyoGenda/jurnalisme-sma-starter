@@ -1,3 +1,4 @@
+// app/auth/callback/page.tsx
 'use client'
 
 import { useEffect } from 'react'
@@ -9,26 +10,37 @@ export default function AuthCallbackPage() {
   const params = useSearchParams()
 
   useEffect(() => {
-    const run = async () => {
+    (async () => {
       const code = params.get('code')
-      const next = params.get('next') || '/dashboard'
+      const next = params.get('next') ?? '/dashboard'
+
       if (code) {
         const supabase = createClient()
-        // tukar ?code= menjadi session; supabase-js akan menyimpan sesi di cookies
-        await supabase.auth.exchangeCodeForSession({ code })
-        // (opsional) auto-upsert ke profiles jika tabelnya sudah ada
-        const { data: { user } } = await supabase.auth.getUser()
-        if (user) {
-          await supabase.from('profiles').upsert({
-            id: user.id,
-            full_name: user.user_metadata?.full_name || user.email || 'User',
-            role: 'contributor'
-          }, { onConflict: 'id' })
+
+        // ⚠️ Wajib: kirim STRING, bukan object
+        await supabase.auth.exchangeCodeForSession(code)
+
+        // (opsional) upsert profile — aman-kan dari RLS & enum
+        try {
+          const { data: { user } } = await supabase.auth.getUser()
+          if (user) {
+            await supabase.from('profiles').upsert(
+              {
+                id: user.id,
+                full_name: user.user_metadata?.full_name ?? user.email ?? 'User',
+                // biarkan role di-set default/oleh admin. Jangan pakai 'contributor' (tidak ada di enum).
+                // role: 'member', // kalau mau paksa isi, pastikan enum kamu ada 'member'
+              },
+              { onConflict: 'id' }
+            )
+          }
+        } catch {
+          // abaikan error kalau RLS menolak; admin nanti yang melengkapi.
         }
       }
-      router.replace(next) // balik ke dashboard
-    }
-    run()
+
+      router.replace(next)
+    })()
   }, [params, router])
 
   return <p className="text-sm text-slate-500">Menyelesaikan login…</p>
