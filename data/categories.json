@@ -1,0 +1,52 @@
+[
+  {
+    "id": "c1",
+    "name": "Kegiatan",
+    "slug": "kegiatan",
+    "description": "Agenda, event, dan liputan kegiatan sekolah",
+    "articleCount": 12,
+    "color": "#3B82F6",
+    "createdAt": "2024-07-01T10:00:00Z",
+    "updatedAt": "2024-07-01T10:00:00Z"
+  },
+  {
+    "id": "c2",
+    "name": "Edu",
+    "slug": "edu",
+    "description": "Tips belajar, ujian, dan pendidikan",
+    "articleCount": 9,
+    "color": "#10B981",
+    "createdAt": "2024-07-01T10:00:00Z",
+    "updatedAt": "2024-07-01T10:00:00Z"
+  },
+  {
+    "id": "c3",
+    "name": "Feature",
+    "slug": "feature",
+    "description": "Kisah mendalam, profil, dan artikel feature",
+    "articleCount": 7,
+    "color": "#F59E0B",
+    "createdAt": "2024-07-01T10:00:00Z",
+    "updatedAt": "2024-07-01T10:00:00Z"
+  },
+  {
+    "id": "c4",
+    "name": "Opini",
+    "slug": "opini",
+    "description": "Pendapat dan editorial siswa",
+    "articleCount": 4,
+    "color": "#8B5CF6",
+    "createdAt": "2024-07-01T10:00:00Z",
+    "updatedAt": "2024-07-01T10:00:00Z"
+  },
+  {
+    "id": "c5",
+    "name": "Teknologi",
+    "slug": "teknologi",
+    "description": "Perkembangan teknologi dan digital literacy",
+    "articleCount": 3,
+    "color": "#06B6D4",
+    "createdAt": "2024-07-01T10:00:00Z",
+    "updatedAt": "2024-07-01T10:00:00Z"
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "articles": [
+    {
+      "id": "a1",
+      "title": "Pentas Seni 2025: Kemeriahan Kreativitas Siswa SMA N7",
+      "slug": "pentas-seni-2025",
+      "excerpt": "Gelaran pentas seni tahunan SMA N7 kembali memukau dengan berbagai pertunjukan spektakuler dari siswa-siswi berbakat. Mulai dari tarian tradisional hingga musik modern, semuanya tersaji dalam satu panggung megah.",
+      "cover": "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "Tim Redaksi",
+      "category": "Kegiatan",
+      "tags": ["pensi", "hiburan", "kreativitas"],
+      "publishedAt": "2025-01-15",
+      "readingTime": "3 menit",
+      "content": "Pentas seni tahunan SMA Negeri 7 tahun 2025 telah sukses digelar dengan tema 'Harmoni dalam Keberagaman'. Acara yang berlangsung selama dua hari ini menampilkan berbagai pertunjukan memukau dari siswa-siswi yang berbakat di berbagai bidang seni."
+    },
+    {
+      "id": "a2",
+      "title": "Tips Jitu Menghadapi UTBK 2025: Strategi Belajar Efektif",
+      "slug": "tips-lulus-utbk",
+      "excerpt": "Memasuki fase persiapan UTBK, siswa kelas 12 SMA N7 perlu strategi belajar yang tepat. Berikut tips dari alumni dan guru untuk memaksimalkan hasil belajar menjelang ujian penting ini.",
+      "cover": "https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "Tim Edukasi",
+      "category": "Edukasi",
+      "tags": ["belajar", "UTBK", "tips"],
+      "publishedAt": "2025-01-10",
+      "readingTime": "5 menit",
+      "content": "Ujian Tulis Berbasis Komputer (UTBK) merupakan gerbang menuju perguruan tinggi impian. Untuk siswa SMA N7 yang akan menghadapi UTBK 2025, persiapan matang sangatlah penting."
+    },
+    {
+      "id": "a3",
+      "title": "Prestasi Gemilang Tim Olimpiade Sains SMA N7",
+      "slug": "prestasi-olimpiade-sains",
+      "excerpt": "Tim olimpiade sains SMA N7 meraih medali emas dan perak di ajang kompetisi sains tingkat provinsi. Pencapaian ini membanggakan dan memotivasi adik kelas untuk terus berprestasi.",
+      "cover": "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "Redaksi Sains",
+      "category": "Prestasi",
+      "tags": ["olimpiade", "sains", "prestasi"],
+      "publishedAt": "2025-01-08",
+      "readingTime": "4 menit",
+      "content": "SMA Negeri 7 kembali mengukir prestasi membanggakan di bidang sains. Tim olimpiade yang terdiri dari siswa-siswa pilihan berhasil meraih medali emas dan perak di Olimpiade Sains Nasional tingkat provinsi."
+    },
+    {
+      "id": "a4",
+      "title": "Kegiatan Bakti Sosial: Berbagi Kasih dengan Masyarakat",
+      "slug": "bakti-sosial-2025",
+      "excerpt": "OSIS SMA N7 mengadakan kegiatan bakti sosial ke panti asuhan dan daerah terpencil. Aksi nyata ini mengajarkan nilai-nilai empati dan kepedulian sosial kepada seluruh siswa.",
+      "cover": "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "OSIS",
+      "category": "Sosial",
+      "tags": ["baksos", "kepedulian", "masyarakat"],
+      "publishedAt": "2025-01-05",
+      "readingTime": "3 menit",
+      "content": "Dalam rangka menumbuhkan rasa empati dan kepedulian sosial, OSIS SMA Negeri 7 mengadakan kegiatan bakti sosial yang melibatkan seluruh siswa dan guru."
+    },
+    {
+      "id": "a5",
+      "title": "Workshop Digital Marketing untuk Siswa SMK",
+      "slug": "workshop-digital-marketing",
+      "excerpt": "Kolaborasi dengan industri memberikan kesempatan siswa untuk belajar digital marketing dari praktisi berpengalaman. Pelatihan ini membuka wawasan tentang dunia kerja modern.",
+      "cover": "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "Tim Kewirausahaan",
+      "category": "Workshop",
+      "tags": ["workshop", "digital", "marketing"],
+      "publishedAt": "2025-01-03",
+      "readingTime": "4 menit",
+      "content": "SMA Negeri 7 mengadakan workshop digital marketing yang diikuti oleh siswa-siswa yang tertarik dengan dunia bisnis dan teknologi."
+    },
+    {
+      "id": "a6",
+      "title": "Festival Literasi: Menggairahkan Budaya Baca Tulis",
+      "slug": "festival-literasi-2025",
+      "excerpt": "Festival literasi tahunan SMA N7 menghadirkan berbagai kegiatan menarik seperti lomba puisi, storytelling, dan bedah buku. Acara ini bertujuan meningkatkan minat baca siswa.",
+      "cover": "https://images.pexels.com/photos/1370296/pexels-photo-1370296.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "status": "Published",
+      "author": "Tim Literasi",
+      "category": "Literasi",
+      "tags": ["literasi", "baca", "tulis"],
+      "publishedAt": "2025-01-01",
+      "readingTime": "3 menit",
+      "content": "Festival Literasi SMA Negeri 7 tahun 2025 sukses digelar dengan antusiasme tinggi dari seluruh warga sekolah. Berbagai kegiatan menarik berhasil menggairahkan budaya baca tulis di lingkungan sekolah."
+    }
+  ],
+  "categories": [
+    { "id": "kegiatan", "name": "Kegiatan", "description": "Berbagai kegiatan sekolah dan ekstrakurikuler" },
+    { "id": "edukasi", "name": "Edukasi", "description": "Tips belajar dan informasi pendidikan" },
+    { "id": "prestasi", "name": "Prestasi", "description": "Pencapaian siswa dan sekolah" },
+    { "id": "sosial", "name": "Sosial", "description": "Kegiatan sosial dan kemasyarakatan" },
+    { "id": "workshop", "name": "Workshop", "description": "Pelatihan dan pengembangan skill" },
+    { "id": "literasi", "name": "Literasi", "description": "Kegiatan membaca dan menulis" }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "title": "Ujian Tengah Semester",
+      "date": "2025-02-10",
+      "location": "Ruang Kelas",
+      "description": "Ujian tengah semester untuk semua tingkat kelas"
+    },
+    {
+      "id": "e2",
+      "title": "Pekan Olahraga",
+      "date": "2025-02-20",
+      "location": "Lapangan Sekolah",
+      "description": "Kompetisi olahraga antar kelas dan ekstrakurikuler"
+    },
+    {
+      "id": "e3",
+      "title": "Bazar Kewirausahaan",
+      "date": "2025-03-01",
+      "location": "Aula Sekolah",
+      "description": "Pameran produk hasil karya siswa dalam program kewirausahaan"
+    }
+  ],
+  "clubs": [
+    {
+      "id": "c1",
+      "name": "Jurnalistik",
+      "description": "Mengembangkan kemampuan menulis dan jurnalistik siswa",
+      "logo": "📰"
+    },
+    {
+      "id": "c2",
+      "name": "Fotografi",
+      "description": "Belajar teknik fotografi dan dokumentasi kegiatan sekolah",
+      "logo": "📸"
+    },
+    {
+      "id": "c3",
+      "name": "Teater",
+      "description": "Mengembangkan bakat seni peran dan pentas siswa",
+      "logo": "🎭"
+    },
+    {
+      "id": "c4",
+      "name": "Musik",
+      "description": "Mengasah kemampuan bermusik dan vocal siswa",
+      "logo": "🎵"
+    }
+  ]
+}

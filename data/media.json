@@ -1,0 +1,72 @@
+[
+  {
+    "id": "m1",
+    "filename": "pensi.jpg",
+    "original_name": "pentas-seni-2025.jpg",
+    "alt": "Pentas Seni SMA N 7",
+    "type": "image",
+    "size": 245678,
+    "dimensions": { "width": 1920, "height": 1080 },
+    "url": "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "thumbnail": "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "usedIn": ["a1"],
+    "uploadedAt": "2025-07-28T09:30:00Z",
+    "uploadedBy": "u1"
+  },
+  {
+    "id": "m2",
+    "filename": "utbk.jpg",
+    "original_name": "tips-utbk-2025.jpg",
+    "alt": "UTBK Tips Belajar",
+    "type": "image",
+    "size": 198765,
+    "dimensions": { "width": 1280, "height": 720 },
+    "url": "https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "thumbnail": "https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "usedIn": ["a2"],
+    "uploadedAt": "2025-08-02T08:45:00Z",
+    "uploadedBy": "u1"
+  },
+  {
+    "id": "m3",
+    "filename": "kantin.jpg",
+    "original_name": "kantin-sehat.jpg",
+    "alt": "Kantin Sehat SMA N 7",
+    "type": "image",
+    "size": 156432,
+    "dimensions": { "width": 1024, "height": 768 },
+    "url": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "thumbnail": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "usedIn": ["a3"],
+    "uploadedAt": "2025-08-07T14:00:00Z",
+    "uploadedBy": "u2"
+  },
+  {
+    "id": "m4",
+    "filename": "alumni.jpg",
+    "original_name": "alumni-jurnalis.jpg",
+    "alt": "Alumni Jurnalis",
+    "type": "image",
+    "size": 189543,
+    "dimensions": { "width": 800, "height": 600 },
+    "url": "https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "thumbnail": "https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "usedIn": ["a4"],
+    "uploadedAt": "2025-08-05T15:30:00Z",
+    "uploadedBy": "u4"
+  },
+  {
+    "id": "m5",
+    "filename": "debat.jpg",
+    "original_name": "kompetisi-debat.jpg",
+    "alt": "Kompetisi Debat",
+    "type": "image",
+    "size": 221087,
+    "dimensions": { "width": 1200, "height": 800 },
+    "url": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "thumbnail": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "usedIn": ["a5"],
+    "uploadedAt": "2025-07-30T10:15:00Z",
+    "uploadedBy": "u5"
+  }
+]

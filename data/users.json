@@ -1,0 +1,62 @@
+[
+  {
+    "id": "u1",
+    "name": "Ayu Permatasari",
+    "email": "ayu@sman7.sch.id",
+    "role": "writer",
+    "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
+    "articles": 5,
+    "bio": "Siswa kelas 11 yang gemar menulis tentang kegiatan sekolah",
+    "joinedAt": "2024-09-01",
+    "lastActive": "2025-08-07T15:30:00Z",
+    "status": "active"
+  },
+  {
+    "id": "u2",
+    "name": "Bima Nugraha",
+    "email": "bima@sman7.sch.id",
+    "role": "editor",
+    "avatar": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100",
+    "articles": 12,
+    "bio": "Editor senior yang mengawasi kualitas konten jurnalistik",
+    "joinedAt": "2024-08-15",
+    "lastActive": "2025-08-07T16:45:00Z",
+    "status": "active"
+  },
+  {
+    "id": "u3",
+    "name": "Admin",
+    "email": "admin@sman7.sch.id",
+    "role": "admin",
+    "avatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100",
+    "articles": 0,
+    "bio": "Administrator sistem dan pembina ekstrakurikuler jurnalistik",
+    "joinedAt": "2024-07-01",
+    "lastActive": "2025-08-07T17:00:00Z",
+    "status": "active"
+  },
+  {
+    "id": "u4",
+    "name": "Citra Dewi",
+    "email": "citra@sman7.sch.id",
+    "role": "writer",
+    "avatar": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100",
+    "articles": 8,
+    "bio": "Penulis feature dan profil dengan gaya storytelling yang menarik",
+    "joinedAt": "2024-09-10",
+    "lastActive": "2025-08-06T14:20:00Z",
+    "status": "active"
+  },
+  {
+    "id": "u5",
+    "name": "Doni Pratama",
+    "email": "doni@sman7.sch.id",
+    "role": "writer",
+    "avatar": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100",
+    "articles": 6,
+    "bio": "Spesialis liputan kegiatan sekolah dan prestasi siswa",
+    "joinedAt": "2024-08-20",
+    "lastActive": "2025-08-05T13:15:00Z",
+    "status": "active"
+  }
+]

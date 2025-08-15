@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 84% 60%;
+    --radius: 0.5rem;
+    --primary-700: 0 78% 37%;
+    --primary-600: 0 78% 45%;
+    --primary-500: 0 84% 60%;
+    --primary-muted: 0 86% 94%;
+    --accent-green: 142 76% 56%;
+    --accent-cyan: 188 95% 43%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 220 14% 95%;
+    --card: 240 9% 7%;
+    --card-foreground: 220 14% 95%;
+    --popover: 240 9% 7%;
+    --popover-foreground: 220 14% 95%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 222 84% 4.9%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 220 14% 95%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 220 14% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 6% 12%;
+    --input: 240 6% 12%;
+    --ring: 0 84% 60%;
+    --primary-muted: 0 86% 94%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-primary-700 {
+    color: hsl(var(--primary-700));
+  }
+  .text-primary-600 {
+    color: hsl(var(--primary-600));
+  }
+  .text-primary-500 {
+    color: hsl(var(--primary-500));
+  }
+  .bg-primary-muted {
+    background-color: hsl(var(--primary-muted));
+  }
+  .text-accent-green {
+    color: hsl(var(--accent-green));
+  }
+  .text-accent-cyan {
+    color: hsl(var(--accent-cyan));
+  }
+  .hover\:text-primary-500:hover {
+    color: hsl(var(--primary-500));
+  }
+}
+
+@layer components {
+   /* Sidebar */
+  .admin-sidebar {
+    @apply min-h-dvh bg-card border-r border transition-all duration-300 ease-in-out;
+    border-color: hsl(var(--border) / 0.5); /* ganti border-border/50 */
+    width: 240px;
+  }
+  .admin-sidebar.collapsed { width: 64px; }
+
+  .sidebar-item { @apply flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-colors; }
+  .sidebar-item:hover { @apply bg-accent text-accent-foreground; }
+  .sidebar-item.active {
+    @apply bg-primary/10 text-primary border;
+    border-color: hsl(var(--primary) / 0.2); /* ganti border-primary/20 */
+  }
+
+  /* Table */
+  .data-table { @apply w-full border-collapse bg-card rounded-lg overflow-hidden; }
+  .data-table th {
+    @apply px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider;
+    background-color: hsl(var(--muted) / 0.5); /* ganti bg-muted/50 (tidak boleh di-@apply) */
+  }
+  .data-table td {
+    @apply px-4 py-3 text-sm border-t;        /* hilangkan /50 di @apply */
+    border-color: hsl(var(--border) / 0.5);
+  }
+  .data-table tr:hover { background-color: hsl(var(--accent) / 0.3); } /* ganti bg-accent/30 */
+}
+
+/* === BADGE STATUS (tanpa @apply opacity) ============================ */
+/* Bentuk pill & border dasar */
+.badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border; }
+
+/* Warna transparan pakai nilai warna eksplisit + opacity */
+.badge-draft {
+  color: rgb(148 163 184);                          /* slate-400/500-ish */
+  background-color: rgb(100 116 139 / 0.10);        /* slate-500/10 */
+  border-color:     rgb(100 116 139 / 0.20);        /* slate-500/20 */
+}
+.badge-scheduled {
+  color: rgb(59 130 246);                            /* blue-500 */
+  background-color: rgb(59 130 246 / 0.10);          /* blue-500/10 */
+  border-color:     rgb(59 130 246 / 0.20);          /* blue-500/20 */
+}
+.badge-review {
+  color: rgb(234 179 8);                             /* yellow-500 */
+  background-color: rgb(234 179 8 / 0.10);           /* yellow-500/10 */
+  border-color:     rgb(234 179 8 / 0.20);           /* yellow-500/20 */
+}
+.badge-published {
+  color: rgb(34 197 94);                             /* green-500 */
+  background-color: rgb(34 197 94 / 0.10);           /* green-500/10 */
+  border-color:     rgb(34 197 94 / 0.20);           /* green-500/20 */
+}
+.badge-archived {
+  color: rgb(239 68 68);                             /* red-500 */
+  background-color: rgb(239 68 68 / 0.10);           /* red-500/10 */
+  border-color:     rgb(239 68 68 / 0.20);           /* red-500/20 */
+}
+
+/* Scrollbar milikmu tetap */
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: hsl(var(--muted-foreground)) transparent; }
+.scrollbar-thin::-webkit-scrollbar { width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background-color: hsl(var(--muted-foreground)); border-radius: 3px; }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background-color: hsl(var(--foreground)); }
+
+/* === THEME: Link Water (opt‑in) ===========================
+   Aktifkan dengan menambah class "linkwater" di <html> atau <body>
+   <body class="linkwater"> ... </body>
+   Kapan pun dihapus → otomatis balik ke tema lama.
+=========================================================== */
+.linkwater {
+  /* mapping utama */
+  --primary: 223 49% 59%;           /* #6582cc */
+  --primary-foreground: 0 0% 100%;
+
+  /* override shades agar utilitas .text-primary-700, dst. ikut */
+  --primary-50:  228 40% 97%; /* #f3f5fb */
+  --primary-100: 225 53% 91%; /* #dce4f4 */
+  --primary-200: 225 42% 88%; /* #cddaf0 */
+  --primary-300: 223 47% 80%; /* #abc0e5 */
+  --primary-400: 223 44% 68%; /* #83a1d7 */
+  --primary-500: 223 49% 59%; /* #6582cc */
+  --primary-600: 223 43% 53%; /* #516abf */
+  --primary-700: 226 41% 48%; /* #4758ae */
+  --primary-800: 227 39% 41%; /* #3f498e */
+  --primary-900: 228 36% 32%; /* #364072 */
+  --primary-950: 231 33% 21%; /* #252946 */
+
+  
+
+  /* optional: sesuaikan aksen agar serasi */
+  --accent: var(--primary-50);
+  --accent-foreground: 222 47% 11%;
+  --ring: var(--primary);           /* fokus ring mengikuti primary */
+  --primary-muted: var(--primary-50);
+}
+
+/* Dark mode + Link Water bersamaan */
+.dark.linkwater {
+  --background: 222 30% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 30% 8%;
+  --card-foreground: 210 40% 98%;
+
+  /* bikin primary sedikit lebih terang di dark */
+  --primary: 223 49% 64%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 226 35% 18%;     /* panel hover */
+  --accent-foreground: 210 40% 98%;
+}
