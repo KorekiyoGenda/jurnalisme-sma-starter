@@ -31,7 +31,7 @@ export default async function AboutPage() {
   // 1) Coba ambil data dari Supabase (aman walau view belum ada)
   let team: TeamRow[] | null = null
   try {
-    const s = createServerClient()
+    const s = await createServerClient()
     const { data } = await s.from('v_team_public').select('*')
     team = data as TeamRow[] | null
   } catch (_) {
