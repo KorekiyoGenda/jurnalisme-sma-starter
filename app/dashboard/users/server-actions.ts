@@ -2,15 +2,16 @@
 
 import { createServerClient } from '@/lib/supabase-server'
 
-type Role = 'member' | 'writer' | 'editor' | 'admin'
+// enum yang valid di DB kamu
+export type Role = 'member' | 'writer' | 'editor' | 'admin'
 
-export async function setUserRole(userId: string, role: Role) {
-  const supabase = await createServerClient() // ✅ wajib await
+// 🔴 WAJIB: named export, dan await client
+export async function updateUserRole(userId: string, newRole: Role) {
+  const supabase = await createServerClient()
 
-  // panggil Postgres function (RPC). Sesuaikan arg names dgn function-mu.
   const { error } = await supabase.rpc('set_user_role', {
-    user_id: userId,
-    new_role: role,
+    user_id: userId,   // samakan dengan argumen function di DB
+    new_role: newRole,
   })
 
   if (error) throw new Error(error.message)

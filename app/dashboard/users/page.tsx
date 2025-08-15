@@ -1,46 +1,81 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import { createClient } from '@/lib/supabase-client'
-import { updateUserRole } from './server-actions'
+import { updateUserRole, type Role } from './server-actions'
 
-type Row = { id: string; full_name: string | null; role: 'contributor'|'editor'|'chief'; created_at: string }
+type Row = {
+  id: string
+  full_name: string | null
+  role: Role
+  created_at: string
+}
+
+const ALL_ROLES: Role[] = ['member', 'writer', 'editor', 'admin']
 
 export default function UsersPage() {
-  const s = createClient()
-  const [meRole, setMeRole] = useState<string>('contributor')
+  const supabase = createClient()
+  const [meRole, setMeRole] = useState<Role | 'unknown'>('unknown')
+  const [meId, setMeId] = useState<string | null>(null)
   const [rows, setRows] = useState<Row[]>([])
-  const [busy, setBusy] = useState<string | null>(null)
+  const [busyId, setBusyId] = useState<string | null>(null)
+  const [pending, start] = useTransition()
 
   useEffect(() => {
     (async () => {
-      const r = await s.rpc('me_role')
-      setMeRole((r.data as string) ?? 'contributor')
-      if ((r.data as string) !== 'chief') {
-        alert('Halaman ini khusus chief.')
+      // ambil user & role-nya
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) {
+        alert('Harus login.')
+        return
       }
-      const { data } = await s.from('profiles')
+      setMeId(user.id)
+
+      // role-ku (aman dengan RLS: policy self_read)
+      const { data: me } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', user.id)
+        .maybeSingle()
+
+      const myRole = (me?.role ?? 'member') as Role
+      setMeRole(myRole)
+
+      // hanya admin yang boleh lihat semua profil (sesuai policy: is_admin())
+      if (myRole !== 'admin') {
+        alert('Halaman ini khusus admin.')
+        return
+      }
+
+      const { data } = await supabase
+        .from('profiles')
         .select('id, full_name, role, created_at')
         .order('created_at', { ascending: true })
-      setRows(data as any || [])
-    })()
-  }, [s])
 
-  const apply = async (id: string, newRole: Row['role']) => {
-    setBusy(id)
-    try {
-      await updateUserRole(id, newRole)
-      setRows(prev => prev.map(r => r.id === id ? { ...r, role: newRole } : r))
-    } finally {
-      setBusy(null)
-    }
+      setRows((data ?? []) as Row[])
+    })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const apply = (id: string, newRole: Role) => {
+    setBusyId(id)
+    start(async () => {
+      try {
+        await updateUserRole(id, newRole)
+        setRows(prev => prev.map(r => (r.id === id ? { ...r, role: newRole } : r)))
+      } finally {
+        setBusyId(null)
+      }
+    })
   }
 
   return (
-    <section className="card">
-      <div className="mb-3">
-        <h2 className="font-semibold">Anggota & Role</h2>
-        <p className="text-sm text-slate-500">Kelola peran anggota (khusus chief). Peran kamu: <b>{meRole}</b></p>
+    <section className="card p-4 md:p-6">
+      <div className="mb-4">
+        <h2 className="font-semibold text-lg">Anggota & Role</h2>
+        <p className="text-sm text-slate-500">
+          Kelola peran anggota (khusus admin). Peran kamu: <b>{meRole}</b>
+        </p>
       </div>
 
       <div className="overflow-x-auto">
@@ -62,23 +97,34 @@ export default function UsersPage() {
                   <span className="rounded-full border px-2 py-0.5">{u.role}</span>
                 </td>
                 <td className="py-2">
-                  <div className="flex gap-2">
-                    {(['contributor','editor','chief'] as const).map(r => (
+                  <div className="flex flex-wrap gap-2">
+                    {ALL_ROLES.map(r => (
                       <button
                         key={r}
-                        disabled={busy === u.id || u.role === r}
-                        onClick={()=>apply(u.id, r)}
-                        className={`btn h-8 ${u.role===r ? 'opacity-50 cursor-default' : ''}`}
+                        disabled={
+                          pending || busyId === u.id || u.role === r || u.id === meId /* jangan ubah diri sendiri */
+                        }
+                        onClick={() => apply(u.id, r)}
+                        className={`btn h-8 px-3 ${
+                          u.role === r ? 'opacity-50 cursor-default' : ''
+                        }`}
+                        title={u.id === meId ? 'Tidak bisa ubah role diri sendiri' : `Jadikan ${r}`}
                       >
-                        {busy===u.id ? '...' : `Jadikan ${r}`}
+                        {busyId === u.id ? '...' : `Jadikan ${r}`}
                       </button>
                     ))}
                   </div>
                 </td>
               </tr>
             ))}
-            {rows.length===0 && (
-              <tr><td className="py-6 text-slate-500" colSpan={4}>Tidak ada data.</td></tr>
+            {rows.length === 0 && (
+              <tr>
+                <td className="py-6 text-slate-500" colSpan={4}>
+                  {meRole === 'admin'
+                    ? 'Tidak ada data.'
+                    : 'Kamu bukan admin; daftar anggota tidak ditampilkan.'}
+                </td>
+              </tr>
             )}
           </tbody>
         </table>
